@@ -1,0 +1,89 @@
+<%inherit file="layouts/delegate.mako"/>
+
+<%def name="delegate_name()"><%
+    return 'backbone.digitalgaia'
+%></%def>
+
+<%block name="mission">
+
+<div class="well">
+    <b><em>Fund as many seed nodes and backbones nodes as possible</em></b>
+</div>
+
+    <!--
+<div class="alert alert-info">Current IPs for seed nodes and backbone nodes:<br>should also have online/offline status for each node</div>
+-->
+<p>
+    The mission for this delegate is to use the collected fees to pay for seed
+    nodes and backbone nodes. Higher pay means more nodes can be funded.
+</p>
+
+<p>
+    Stability of the network is guaranteed, amongst others, via good connectivity. To this
+    end, it can be useful to have specialized nodes that ensure the network is as close
+    as possible to a <a href="http://en.wikipedia.org/wiki/Small-world_network">small-world network</a>.
+    This ensures amongst others that the average distance between any two nodes in the graph is low,
+    which translates into quick broadcasting of the blocks.
+</p>
+
+<h3>Seed nodes</h3>
+<p>
+    Seed nodes are important because they are the initial entry points to the
+    network. As such, they should have a very high uptime and allow lots of
+    connections while facilitating peer exchange.
+</p>
+
+
+<h3>Backbone nodes</h3>
+<p>
+    Backbone nodes are nodes that are interconnected in a fully-connected graph,
+    on top of the other connections they have to the network. If delegates connect
+    to these nodes, they can ensure that a block they broadcast will only require
+    3 hops at most to reach the next producing delegate.
+</p>
+<img src="/static/images/backbone_diagram.png" class="diagram"/>
+<p>
+    Backbone nodes do not perform peer exchange in order to potentially hide the
+    IPs of the connected delegates, to protect against potential DDoS. Backbones nodes
+    are public nodes and their IPs are known, though, so nodes (delegates) can easily try to
+    connect to them and maintain a few live connections to backbone nodes.
+</p>
+
+<p>
+    This acts in fact as a high-speed backbone for the delegates that ensures low-latency
+    when propagating a block. This network should be open to any connections, but
+    should de-incentivize normal nodes to connect to it, or make sure somehow that it
+    stays always available for delegates.
+</p>
+
+<h3>A collaboration</h3>
+<p>
+    Care should be taken that the previous diagram doesn't
+    turn into an island where only the backbone nodes and some delegates are, which
+    could create forks in the blockchain. A proposed solution is to have the seed
+    nodes connected to the backbone nodes too. Seed nodes see a lot of churn and
+    maintain a very high number of connections and thus should not end up in a minority
+    fork very often. We can't prove mathematically that it makes things better but it
+    somehow feels right :)
+</p>
+
+<img src="/static/images/backbone_seeds_diagram.png" class="diagram"/>
+
+<p>
+    To not put all the eggs in the proverbial basket, seed nodes and backbone
+    nodes should be run on different geographical locations and VPS providers.
+    As the backbone nodes are parts of a fully connected graph, a single node being
+    down shouldn't affect connectivity at all. In fact, one would need to take
+    down nearly all of the backbone nodes in order to severely affect the network.
+    Note that this doesn't make the network more centralized and fragile, because
+    if you attack and take down all the nodes you're basically back to the starting
+    point without them. This does make the network more specialized, though, and
+    more efficient in accomplishing certain tasks (namely: fast block propagation
+    and high connectivity).
+</p>
+<p>In fact, if the small-world network constraint can be successfully enforced,
+    then this means that not only the nodes directly connected to the backbone will benefit,
+    but also all the nodes from the network (albeit with a slightly larger average
+    distance between nodes).
+</p>
+</%block>

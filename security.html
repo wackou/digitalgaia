@@ -1,0 +1,28 @@
+<%inherit file="layouts/delegate.mako"/>
+
+<%def name="delegate_name()"><%
+    return 'security.digitalgaia'
+%></%def>
+
+<%block name="mission">
+
+<div class="well">
+    <b><em>Accumulate funds until there are enough for a security audit</em></b><br>
+    <span class="light">and</span><br>
+    <b><em>Perform a security audit as often as possible</em></b>
+</div>
+
+<p>
+    The mission for this delegate is to accumulate funds until there are enough
+    to perform a security audit of the client. An audit will be performed
+    everytime there are enough funds.
+</p>
+<p>
+    This is an important facet of security, because if there are no fundamental
+    design flaws in the system, the only way to critically break it is through
+    a software bug. Ensuring that the code is as resistant as possible to a
+    <a href="http://en.wikipedia.org/wiki/Black_swan_theory">black swan event</a> guarantees that the main developers can
+    focus on the higher-level concepts rather than on low-level technical issues.
+</p>
+
+</%block>

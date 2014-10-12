@@ -1,0 +1,174 @@
+@font-face {
+	font-family: 'chintzys';
+	src: url('/static/fonts/chintzys.eot');
+	src: local('☺'), url('/static/fonts/chintzys.woff') format('woff'), url('/static/fonts/chintzys.ttf') format('truetype'), url('/static/fonts/chintzys.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.digitalgaia_title {
+    font-family: 'chintzys', sans-serif;
+    font-size: 3.0rem;
+    margin-top: 2px;
+}
+
+.body {
+    font-weight: 300;
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+.prose {
+    letter-spacing: .06em;
+    line-height: 1.5;
+}
+
+p, li, .light {
+    font-weight: 300;
+    color: #7c7c7c;
+}
+
+b, strong, .navbar-brand, h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+    color: #555555;
+}
+
+h1, h2, h3, h4, h5, h6, #philosophy {
+    text-align: center;
+}
+
+h1, h2, h3 {
+    margin-bottom: 24px;
+}
+
+h3 {
+    margin-top: 42px;
+}
+
+h4, h5, h6 {
+    margin: 24px 0 24px 0;
+    font-weight: 300;
+}
+
+#mission {
+    margin-bottom: 0;
+}
+
+#mission-section1 {
+    margin-bottom: 32px;
+}
+#mission-section2 {
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+#mission-section3 {
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+.btn {
+    font-weight: 300;
+}
+
+#philosophy-gaia {
+    padding-bottom: 32px;
+}
+
+#philosophy-gaia p {
+    letter-spacing: .05em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    text-align: justify;
+}
+
+#philosophy-gaia img {
+    width: 25%;
+    float: left
+}
+
+#philosophy-gaia-note {
+    float: right;
+    margin-right: 40px;
+    font-style: italic;
+    color: #7c7c7c;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.diagram {
+    display: block;
+    margin: 0 auto;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+
+@media (min-width:480px) {
+    .display-only-xxs {
+        display: none !important;
+    }
+}
+
+/* iphone portrait mode */
+@media (max-width:480px) {
+    .diagram {
+        width: 300px;
+    }
+    #philosophy-gaia img {
+        width: 50%;
+    }
+    #philosophy-gaia-note {
+        margin-right: 0px;
+    }
+    .hidden-xxs {
+        display: none !important
+    }
+
+    .col-xxs-1, .col-xxs-2, .col-xxs-3, .col-xxs-4, .col-xxs-5, .col-xxs-6, .col-xxs-7, .col-xxs-8, .col-xxs-9, .col-xxs-10, .col-xxs-11, .col-xxs-12 {
+        float: left;
+        padding-left: 0px;
+    }
+    .col-xxs-12 {
+        width: 100%;
+    }
+    .col-xxs-11 {
+        width: 91.66666667%;
+    }
+    .col-xxs-10 {
+        width: 83.33333333%;
+    }
+    .col-xxs-9 {
+        width: 75%;
+    }
+    .col-xxs-8 {
+        width: 66.66666667%;
+    }
+    .col-xxs-7 {
+        width: 58.33333333%;
+    }
+    .col-xxs-6 {
+        width: 50%;
+    }
+    .col-xxs-5 {
+        width: 41.66666667%;
+    }
+    .col-xxs-4 {
+        width: 33.33333333%;
+    }
+    .col-xxs-3 {
+        width: 25%;
+    }
+    .col-xxs-2 {
+        width: 16.66666667%;
+    }
+    .col-xxs-1 {
+        width: 8.33333333%;
+    }
+    .col-xxs-offset-1 {
+      margin-left: 8.33333333%;
+    }
+}

@@ -1,0 +1,29 @@
+<%inherit file="layouts/delegate.mako"/>
+
+<%def name="delegate_name()"><%
+    return 'charity.digitalgaia'
+%></%def>
+
+<%block name="mission">
+
+<div class="well">
+    <b><em>Donate delegate's pay to a charity that is aligned with the BitShares vision</em></b>
+</div>
+
+<div class="alert alert-info">Delegate's pay currently going to:
+    <a href="https://www.eff.org/">Electronic Frontier Foundation</a>
+</div>
+
+<p>
+    The mission for this delegate is to transfer its pay to a charity, as long
+    as its goals are somewhat aligned / related to advancing the BitShares
+    ecosystem.
+</p>
+<p>
+    This can be seen as a way to indirectly improve the security
+    from attack external to the system, as these organizations can be helpful
+    when it comes to regulatory issues, deciding on legal status for
+    running a delegate, etc.
+</p>
+
+</%block>

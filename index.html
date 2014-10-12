@@ -1,0 +1,139 @@
+<%inherit file="layouts/base.mako"/>
+
+<%block name="title">Digital Gaia - index</%block>
+
+<%!
+    delegates = []
+%>
+
+<%
+    global delegates
+    delegates = []
+%>
+
+<%block name="scripts">
+${parent.scripts()}
+<script type="text/javascript">
+$(function() {
+    $.get(PUBLIC_API_URL+"/delegates", function(data) {
+        var active_delegates = data['result'];
+
+        % for delegate in delegates:
+
+            var active = false;
+            var rank = 0;
+            var votes = null;
+            for (var i=0; i<active_delegates.length; i++) {
+                if (active_delegates[i][0] == "${delegate}") {
+                    if (i < 101) {
+                        active = true;
+                    }
+                    rank = i;
+                    votes = active_delegates[i][1];
+                    break;
+                }
+            }
+            var status = "<button disabled='disabled' class='btn btn-sm ";
+            if (active) { status += "btn-success'>Active"; }
+            else        { status += "btn-danger'>Standby"; }
+            if (votes) { status += " (" + votes + ")"; }
+            status += "<br>rank: " + rank + "</div>";
+
+            // use class here instead of id to be able to access more than one
+            // element at a time (needed because I suck at making things responsive,
+            // so the element is actually duplicated between the small and large layout...
+            var st = $(".status_${parent.slug_from_delegate(delegate)}");
+            st.html(status);
+        % endfor
+    });
+});
+</script>
+</%block>
+
+<%def name="render_delegate(name=None, mission=None)">
+    <%
+        global delegates
+        delegates.append(name)
+    %>
+    <div class="well delegate">
+        <!-- Layout on medium and large devices -->
+        <div class="row hidden-xxs">
+            <div class="col-lg-3 col-md-4 col-sm-3 col-xs-3">
+                <img src="https://robohash.org/${name}?size=120x120" style="margin-top: -24px;">
+                <div class="status_${parent.slug_from_delegate(name)}" style="margin: 12px 0 0 8px;"></div>
+            </div>
+            <div class="col-lg-9 col-md-8 col-sm-9 col-xs-9 col-xxs-6">
+                <br><p><b>Name:</b> ${name}</p>
+                <br><p><b>Mission:</b> ${mission}</p>
+                <br>
+                <a href="/${name.split('.')[0]}.html" class="btn btn-default">
+                    <span class="glyphicon glyphicon-info-sign"></span>
+                    More info
+                </a>
+                <a href="btsx://${name}/approve" class="btn btn-default" style="margin-left: 12px;">
+                    <i class="fa fa-thumbs-o-up"></i>
+                     Approve what this guy is doing!
+                </a>
+            </div>
+        </div>
+
+        <!-- layout on small devices (iphone, portrait mode) -->
+        <div class="row display-only-xxs"><div class="col-xxs-12">
+            <h3 style="margin: 0 0 12px 0;">${name}</h3>
+        </div></div>
+        <div class="row display-only-xxs">
+            <div class="col-xxs-6">
+                <img src="https://robohash.org/${name}?size=120x120" style="margin-top: -24px;">
+            </div>
+            <div class="col-md-9 col-sm-9 col-xs-9 col-xxs-6">
+                <div class="status_${parent.slug_from_delegate(name)}" style="margin: 8px 0;"></div>
+                <a href="/${name.split('.')[0]}.html" class="btn btn-default">
+                    <span class="glyphicon glyphicon-info-sign"></span>
+                    More info
+                </a>
+            </div>
+        </div>
+        <div class="row display-only-xxs"><div class="col-xxs-11 col-xxs-offset-1">
+            <br><p><b>Mission:</b> ${mission}</p>
+        </div></div>
+    </div>
+
+</%def>
+
+<div class="well"><p id="mission">
+    <b>Mission:</b>
+    to enhance the security, stability and overall reliability of the BitShares platform
+</p></div>
+
+<div class="alert alert-info alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+  INFO: If you previously approved <em>wackou-delegate</em>, please switch your votes to <em>wackou.digitalgaia</em> instead. Thanks!
+</div>
+
+<h3 style="text-align: center;">Delegate bids</h3>
+
+<div class="row">
+    <div class="col-md-6">
+        ${render_delegate('wackou.digitalgaia',
+                          mission='Develop the <a href="https://github.com/wackou/bitshares_delegate_tools">bitshares_delegate_tools</a>')}
+    </div>
+    <div class="col-md-6">
+        ${render_delegate('backbone.digitalgaia',
+                          mission='Fund seed nodes and backbone nodes')}
+    </div>
+</div>
+
+<%doc>
+<div class="row">
+    <div class="col-md-6">
+        ${render_delegate('security.digitalgaia',
+                          mission='Fund security audits '
+                                  'of the BitShares codebase')}
+    </div>
+    <div class="col-md-6">
+        ${render_delegate('charity.digitalgaia',
+                          mission='Donate to a charity in '
+                                  'line with the BitShares vision')}
+    </div>
+</div>
+</%doc>
