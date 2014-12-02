@@ -52,7 +52,7 @@ $(function() {
 
         <div id="status_${parent.slug_from_delegate(next.delegate_name())}"  style="margin-top: 12px;"></div>
 
-        <a href="btsx:${next.delegate_name()}/approve" class="btn btn-default hidden-xxs" style="margin-top: 10px;">
+        <a href="bts:${next.delegate_name()}/approve" class="btn btn-default hidden-xxs" style="margin-top: 10px;">
             <i class="fa fa-thumbs-o-up" style="font-size: 24px;"></i> <b>Approve!</b>
         </a>
     </div>
