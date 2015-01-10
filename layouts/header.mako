@@ -40,7 +40,8 @@
                     </div>
 
                     <ul class="nav navbar-nav">
-                        ${menu_item('wackou', 'wackou.html')}
+                        ${menu_item('btstools', 'btstools.html')}
+                        ##${menu_item('wackou', 'wackou.html')}
                         ${menu_item('backbone', 'backbone.html')}
                         ##${menu_item('security', 'security.html')}
                         ##${menu_item('charity', 'charity.html')}

@@ -1,0 +1,54 @@
+<%inherit file="layouts/delegate.mako"/>
+
+<%def name="delegate_name()"><%
+    return 'btstools.digitalgaia'
+%></%def>
+
+<%block name="mission">
+
+<div class="well">
+    <b><em>Make it as easy as possible to run and monitor a delegate efficiently</em></b><br>
+    <span class="light">and</span><br>
+    <b><em>Quickly react in case of error/failure</em></b>
+</div>
+
+<p>The mission for this delegate is to fund the development of monitoring tools for running
+the bitshares delegate client and sending notifications in case something goes
+wrong with it.</p>
+
+<p>It is important for security to try to have the most stable, bug-free code, but
+crashes, errors and adverse events always happen, so it only makes sense to also
+have powerful monitoring tools in order to rapidly react to conditions endangering
+the general health of the network.</p>
+
+<h3>Features</h3>
+    <p>The tools cover, or plan to cover, the following areas:</p>
+    <ul>
+        <li>[DONE] one-liner tools to properly build a given version of the client and run it</li>
+        <li>[DONE] client monitoring of CPU, RAM, connections</li>
+        <li>[DONE] overview of multiple instances running on different nodes to ensure
+            a smooth transition when compiling main node / running on a backup node</li>
+        <li>[DONE] email notifications and iOS push notifications when node goes offline or misses a block</li>
+        <li>[DONE] automatic checking and publishing of feeds for BTC, gold, silver and all fiat BitAssets</li>
+        <li>[TODO] anti-DDoS tools / proxies for hiding delegates</li>
+    </ul>
+
+<h3>Download</h3>
+
+<p>Just run <code>pip install bts_tools</code>, preferably in a virtualenv, and you should be all set!</p>
+<p>Alternatively, the source code and documentation for the tools can be found on GitHub:
+<a href="https://github.com/wackou/bts_tools">https://github.com/wackou/bts_tools</a></p>
+
+<h3>Documentation</h3>
+
+<p>For now, the main documentation can be found in the
+    <a href="https://github.com/wackou/bts_tools/blob/master/README.md">README file</a> on Github
+</p>
+
+<h3>Bugs / feature requests</h3>
+
+<p>Please report all issues and feature requests on the GitHub issue tracker:
+    <a href="https://github.com/wackou/bts_tools/issues">https://github.com/wackou/bts_tools/issues</a>
+</p>
+
+</%block>
