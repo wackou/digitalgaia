@@ -48,7 +48,7 @@ $(function() {
 <h2 class="display-only-xxs">${next.delegate_name()}</h2>
 <div class="row">
     <div class="col-md-2 col-md-offset-2 col-sm-3 col-sm-offset-1 col-xs-3 col-xxs-6" style="text-align: center;">
-        <img src="https://robohash.org/${next.delegate_name()}?size=120x120" style="margin-top: -24px;"/>
+        <img src="https://robohash.org/set_1/${next.delegate_name()}?size=120x120" style="margin-top: -24px;"/>
 
         <div id="status_${parent.slug_from_delegate(next.delegate_name())}"  style="margin-top: 12px;"></div>
 
