@@ -36,7 +36,7 @@
                 <div class="collapse navbar-collapse">
 
                     <div class="navbar-header">
-                        <a href="#" class="navbar-brand">Delegates</a>
+                        <a href="#" class="navbar-brand">Missions</a>
                     </div>
 
                     <ul class="nav navbar-nav">

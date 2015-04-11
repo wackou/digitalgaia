@@ -100,27 +100,32 @@ $(function() {
 
 </%def>
 
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
 <div class="well"><p id="mission">
     <b>Mission:</b>
     to enhance the security, stability and overall reliability of the BitShares platform
 </p></div>
+</div></div>
 
 ##<div class="alert alert-info alert-dismissible" role="alert">
 ##  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 ##  INFO: If you previously approved <em>wackou-delegate</em>, please switch your votes to <em>btstools.digitalgaia</em> instead. Thanks!
 ##</div>
 
-<h3 style="text-align: center;">Delegate bids</h3>
+<h3 style="text-align: center;">Delegate bid</h3>
 
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-8 col-md-offset-2">
         ${render_delegate('btstools.digitalgaia',
-                          mission='Develop the <a href="https://github.com/wackou/bts_tools">BitShares delegate tools</a>')}
+                          mission='''
+                          <ul><li>Develop the <a href="/btstools.html">BitShares delegate tools</a></li>
+                          <li>Fund <a href="/backbone.html">seed nodes and backbone nodes</a></li></ul>''')}
     </div>
-    <div class="col-md-6">
-        ${render_delegate('backbone.digitalgaia',
-                          mission='Fund seed nodes and backbone nodes')}
-    </div>
+##    <div class="col-md-6">
+##        ${render_delegate('backbone.digitalgaia',
+##                          mission='Fund seed nodes and backbone nodes')}
+##    </div>
 </div>
 
 <%doc>

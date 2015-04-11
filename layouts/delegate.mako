@@ -69,7 +69,7 @@ ${next.body()}
 
 <div class="row prose" style="margin-top: 24px;">
     <div class="col-md-10 col-md-offset-1">
-        <h3 style="margin-top: 0;">Mission</h3>
+        <h3 style="margin-top: 0;">Mission: ${next.mission_name()}</h3>
         <%block name="mission"></%block>
     </div>
 </div>

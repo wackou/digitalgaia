@@ -1,7 +1,11 @@
 <%inherit file="layouts/delegate.mako"/>
 
 <%def name="delegate_name()"><%
-    return 'backbone.digitalgaia'
+    return 'btstools.digitalgaia'
+%></%def>
+
+<%def name="mission_name()"><%
+    return 'backbone'
 %></%def>
 
 <%block name="mission">
@@ -11,16 +15,21 @@
 </div>
 
     <!--
-<div class="alert alert-info">Current IPs for seed nodes and backbone nodes:<br>should also have online/offline status for each node</div>
+should also have online/offline status for each node
 -->
-
-<div class="alert alert-info alert-dismissible" role="alert">
-  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-  INFO: This delegate's mission has been merged into the <a href="btstools.html"><em>btstools.digitalgaia</em></a> delegate. Please update your votes accordingly, thanks!
+<div class="alert alert-info"><p>List of current IPs for seed nodes and backbone nodes:</p>
+    <ul>
+        <li>BTS<br>
+            Seed node: seed01.digitalgaia.io:1776 <em>(46.226.109.66:1776)</em><br>
+            Chain server: seed01.digitalgaia.io:1375 <em>(46.226.109.66:1375)</em></li>
+        <li>DVS<br>
+            Seed node: seed01.digitalgaia.io:1778 <em>(46.226.109.66:1778)</em><br>
+            Chain server: seed01.digitalgaia.io:1378 <em>(46.226.109.66:1378)</em></li>
+    </ul>
 </div>
 
 <p>
-    The mission for this delegate is to use the collected fees to pay for seed
+    This mission of the delegate consists in using the collected fees to pay for seed
     nodes and backbone nodes. Higher pay means more nodes can be funded.
 </p>
 
