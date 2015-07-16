@@ -1,9 +1,16 @@
 <%inherit file="base.mako"/>
 
+<%!
+    from hashlib import sha256
+%>
+
 <%block name="title">Digital Gaia - ${next.delegate_name().split('.')[0]}</%block>
 
 <%block name="scripts">
 ${parent.scripts()}
+
+<script src="/static/js/sha256.js"></script>
+<script src="/static/js/jdenticon.js"></script>
 
 <script type="text/javascript">
 $(function() {
@@ -48,7 +55,7 @@ $(function() {
 <h2 class="display-only-xxs">${next.delegate_name()}</h2>
 <div class="row">
     <div class="col-md-2 col-md-offset-2 col-sm-3 col-sm-offset-1 col-xs-3 col-xxs-6" style="text-align: center;">
-        <img src="https://robohash.org/set_1/${next.delegate_name()}?size=120x120" style="margin-top: -24px;"/>
+        <canvas width="120" height="120" data-jdenticon-hash="${sha256(next.delegate_name().encode('utf-8')).hexdigest()}"></canvas>
 
         <div id="status_${parent.slug_from_delegate(next.delegate_name())}"  style="margin-top: 12px;"></div>
 
